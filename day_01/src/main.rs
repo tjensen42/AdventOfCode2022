@@ -5,15 +5,15 @@ fn main() {
     let file = File::open("input").unwrap();
     let reader = BufReader::new(file);
 
-    let mut tmp = 0;
+    let mut sum = 0;
     let mut elves = Vec::new();
     for line in reader.lines() {
         let line = line.unwrap();
         if !line.is_empty() {
-            tmp += line.parse::<u64>().unwrap();
+            sum += line.parse::<u64>().unwrap();
         } else {
-            elves.push(tmp);
-            tmp = 0;
+            elves.push(sum);
+            sum = 0;
         }
     }
     elves.sort();
