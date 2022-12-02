@@ -1,4 +1,3 @@
-use core::panic;
 use std::fs;
 
 const ROCK: u8 = 1;
@@ -37,7 +36,7 @@ fn main() {
                 PAPER => SCISSOR as usize,
                 _ => ROCK as usize,
             },
-            _ => panic!()
+            _ => ()
         }
     }
     println!("#2: {}", score);
