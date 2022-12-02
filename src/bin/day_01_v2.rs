@@ -1,7 +1,7 @@
 use std::fs;
 
 fn main() {
-    let input = fs::read_to_string("input").unwrap();
+    let input = fs::read_to_string("./input/day_01/input.txt").unwrap();
 
     let mut sum = 0;
     let mut elves = Vec::new();
