@@ -14,7 +14,7 @@ fn main() {
         let me = line.as_bytes()[2] - b'X' + 1;
         match (elf, me) {
             (SCISSOR, ROCK) | (PAPER, SCISSOR) | (ROCK, PAPER) => score += 6,
-            (elf, me) => if elf == me { score += 3 },
+            _ => if elf == me { score += 3 },
         }
         score += me as usize;
     }
@@ -36,7 +36,7 @@ fn main() {
                 PAPER => SCISSOR as usize,
                 _ => ROCK as usize,
             },
-            _ => ()
+            _ => unreachable!()
         }
     }
     println!("#2: {}", score);
